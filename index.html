@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<title>Lume Sandbox</title>
+	<meta charset="UTF-8" />
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Example: User adds additional custom style to the name-card element: */
+		name-card {
+			white-space: nowrap;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Example: End user uses LUME's elements to position content in 3D space. -->
+	<i-scene>
+		<i-node align="0.5 0.5" id="container">
+
+			<!-- Example: End user provides a value for the name attribute. -->
+			<name-card name="Amadar Centali" id="card">
+				<!-- Example: End user provides content for name-card to render. -->
+				<span>What's your name?</span>
+			</name-card>
+
+		</i-node>
+	</i-scene>
+
+	<script src="src/index.js"></script>
+</body>
+
+</html>
