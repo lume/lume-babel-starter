@@ -4,19 +4,21 @@
     "description": "Simple Parcel/Babel LUME starter kit.",
     "main": "index.html",
     "scripts": {
-        "start": "parcel index.html --open",
-        "build": "parcel build index.html"
+        "start": "ln -sf ../node_modules dist/node_modules && node generate-import-map.mjs > dist/importmap.json && (babel src -d dist --watch & p1=$!; live-server ./ & p2=$!; wait $p1 $p2)",
+        "build": "babel src -d dist"
     },
     "dependencies": {
         "@lume/element": "0.1.2",
         "lume": "0.0.0-rc.0"
     },
     "devDependencies": {
-        "@babel/core": "7.2.0",
-        "@babel/plugin-proposal-class-properties": "7.4.4",
+        "@babel/cli": "7.11.6",
+        "@babel/core": "7.11.6",
+        "@babel/plugin-proposal-class-properties": "7.10.4",
         "@babel/plugin-proposal-decorators": "7.10.5",
+        "@jsenv/node-module-import-map": "12.0.1",
         "babel-preset-solid": "0.19.0",
-        "parcel": "1.12.4",
+        "live-server": "1.2.1",
         "prettier": "2.1.1"
     },
     "keywords": []
